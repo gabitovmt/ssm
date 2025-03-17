@@ -1,4 +1,4 @@
-package org.example.gsstatemachine;
+package org.example.ssm01;
 
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;

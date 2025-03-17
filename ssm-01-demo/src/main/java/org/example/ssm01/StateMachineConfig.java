@@ -1,4 +1,4 @@
-package org.example.gsstatemachine;
+package org.example.ssm01;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
