@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <artifactId>ssm-51</artifactId>
+    <artifactId>ssm-53</artifactId>
     <version>1.0.0</version>
-    <name>ssm-51-turnstile</name>
-    <description>Турникет</description>
+    <name>ssm-53-showcase</name>
+    <description>Сложный вариант конечного автомата</description>
 
     <dependencies>
         <dependency>
