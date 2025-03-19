@@ -11,36 +11,41 @@ import org.springframework.statemachine.config.builders.StateMachineTransitionCo
 import org.springframework.statemachine.listener.StateMachineListener;
 import org.springframework.statemachine.listener.StateMachineListenerAdapter;
 import org.springframework.statemachine.state.State;
-
-import java.util.Optional;
+import org.springframework.statemachine.transition.Transition;
 
 @Slf4j
 @Configuration
 @EnableStateMachine
-public class StateMachineConfig extends StateMachineConfigurerAdapter<String, String> {
+public class StateMachineConfig extends StateMachineConfigurerAdapter<States, Events> {
 
     @Override
-    public void configure(StateMachineConfigurationConfigurer<String, String> config) throws Exception {
+    public void configure(StateMachineConfigurationConfigurer<States, Events> config) throws Exception {
         config.withConfiguration()
                 .autoStartup(true)
                 .listener(listener());
     }
 
     @Bean
-    public StateMachineListener<String, String> listener() {
+    public StateMachineListener<States, Events> listener() {
         return new StateMachineListenerAdapter<>() {
             @Override
-            public void stateChanged(State<String, String> from, State<String, String> to) {
-                log.info("{} State change from '{}' to '{}'",
-                        System.currentTimeMillis(),
-                        Optional.ofNullable(from).map(State::getId).orElse("null"),
-                        to.getId());
+            public void stateChanged(State<States, Events> from, State<States, Events> to) {
+                log.info("State change from '{}' to '{}'", stateId(from), stateId(to));
+            }
+
+            @Override
+            public void transition(Transition<States, Events> tr) {
+                log.info("Transition from '{}' to '{}'", stateId(tr.getSource()), stateId(tr.getTarget()));
+            }
+
+            private States stateId(State<States, Events> state) {
+                return state != null ? state.getId() : null;
             }
         };
     }
 
     @Override
-    public void configure(StateMachineStateConfigurer<String, String> states) throws Exception {
+    public void configure(StateMachineStateConfigurer<States, Events> states) throws Exception {
         states.withStates()
                 .initial(States.READY)
                 .state(States.DEPLOY_PREPARE, Events.DEPLOY)
@@ -48,7 +53,7 @@ public class StateMachineConfig extends StateMachineConfigurerAdapter<String, St
     }
 
     @Override
-    public void configure(StateMachineTransitionConfigurer<String, String> transitions) throws Exception {
+    public void configure(StateMachineTransitionConfigurer<States, Events> transitions) throws Exception {
         transitions
                 .withExternal().source(States.READY).target(States.DEPLOY_PREPARE).event(Events.DEPLOY)
                 .and()

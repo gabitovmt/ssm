@@ -18,6 +18,14 @@
     <name>gs-statemachine</name>
     <description>Demo project for Spring Statemachine</description>
 
+    <modules>
+        <module>ssm-01-demo</module>
+        <module>ssm-02-def-events</module>
+        <module>ssm-51-turnstile</module>
+        <module>ssm-52-turnstile-reactive</module>
+        <module>ssm-53-showcase</module>
+    </modules>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
