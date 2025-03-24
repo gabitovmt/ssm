@@ -27,6 +27,7 @@
         <module>ssm-54-data-jpa-multi-persist</module>
         <module>ssm-55-persist</module>
         <module>ssm-56-data-jpa</module>
+        <module>ssm-57-data-persist</module>
     </modules>
 
     <properties>

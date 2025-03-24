@@ -10,10 +10,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <artifactId>ssm-56</artifactId>
+    <artifactId>ssm-57</artifactId>
     <version>1.0.0</version>
-    <name>ssm-56-data-jpa</name>
-    <description>Пример сохранения конечного автомата</description>
+    <name>ssm-57-data-persist</name>
+    <description>Пример сохранения состояния конечного автомата</description>
 
     <dependencies>
         <dependency>
