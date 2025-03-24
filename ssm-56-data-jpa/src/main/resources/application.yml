@@ -1,0 +1,21 @@
+logging:
+  level:
+    root: INFO
+security:
+  basis:
+    enabled: false
+spring:
+  application:
+    name: ssm-56-data-jpa
+  datasource:
+    url: jdbc:h2:tcp://localhost:9092/C:\devprograms\h2\ssm_56
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.H2Dialect
