@@ -1,3 +1,4 @@
+drop table orders;
 create table orders
 (
     id    int,
