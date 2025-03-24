@@ -18,7 +18,7 @@ public class StateMachineLogListener extends StateMachineListenerAdapter<String,
     public void stateContext(StateContext<String, String> stateContext) {
         switch (stateContext.getStage()) {
             case STATE_ENTRY -> messages.addFirst("Enter " + stateContext.getTarget().getId());
-            case STATE_EXIT -> messages.addFirst("Exit " + stateContext.getTarget().getId());
+            case STATE_EXIT -> messages.addFirst("Exit " + stateContext.getSource().getId());
             case STATEMACHINE_START -> messages.addFirst("Machine started");
             case STATEMACHINE_STOP -> messages.addFirst("Machine stopped");
             default -> {
