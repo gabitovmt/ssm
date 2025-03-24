@@ -25,6 +25,7 @@
         <module>ssm-52-turnstile-reactive</module>
         <module>ssm-53-showcase</module>
         <module>ssm-54-data-jpa-multi-persist</module>
+        <module>ssm-55-persist</module>
     </modules>
 
     <properties>

@@ -7,7 +7,7 @@ security:
     enabled: false
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost:9092/C:\devprograms\h2\smm_54
+    url: jdbc:h2:tcp://localhost:9092/C:\devprograms\h2\ssm_54
     username: sa
     password:
     driver-class-name: org.h2.Driver
