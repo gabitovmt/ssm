@@ -71,12 +71,10 @@ public class StateMachineController {
             }
 
             stateMachineService.releaseStateMachine(currentStateMachine.getId());
-            currentStateMachine.stopReactively().block();
         }
 
         currentStateMachine = stateMachineService.acquireStateMachine(machineId);
         currentStateMachine.addStateListener(listener);
-        currentStateMachine.startReactively().block();
 
         return currentStateMachine;
     }
