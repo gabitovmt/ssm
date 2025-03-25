@@ -73,8 +73,9 @@ public class StateMachineController {
             stateMachineService.releaseStateMachine(currentStateMachine.getId());
         }
 
-        currentStateMachine = stateMachineService.acquireStateMachine(machineId);
+        currentStateMachine = stateMachineService.acquireStateMachine(machineId, false);
         currentStateMachine.addStateListener(listener);
+        currentStateMachine.startReactively().block();
 
         return currentStateMachine;
     }
