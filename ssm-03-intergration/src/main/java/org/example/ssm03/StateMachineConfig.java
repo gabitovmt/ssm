@@ -10,7 +10,7 @@ import org.springframework.statemachine.config.builders.StateMachineTransitionCo
 import java.util.Set;
 
 @Configuration
-@EnableStateMachine
+@EnableStateMachine(name = StateMachines.SM0)
 public class StateMachineConfig extends StateMachineConfigurerAdapter<String, String> {
 
     @Override
