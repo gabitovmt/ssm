@@ -84,4 +84,14 @@ public class StateMachineCommands {
                 .sendEvent(Mono.just(MessageBuilder.withPayload(event).build()))
                 .subscribe();
     }
+
+    @Command(command = "sm extstate", description = "Изменение значения в расширенном состоянии конечного автомата")
+    public void changeExtendedState(
+            @Option(required = true, description = "Ключ") String key,
+            @Option(required = true, description = "Значение") String value,
+            @Option(required = true, defaultValue = StateMachines.SM0, description = "Наименование конечного автомата")
+            String machineId
+    ) {
+        getStateMachine(machineId).getExtendedState().getVariables().put(key, value);
+    }
 }
