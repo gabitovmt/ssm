@@ -28,6 +28,7 @@
         <module>ssm-55-persist</module>
         <module>ssm-56-data-jpa</module>
         <module>ssm-57-data-persist</module>
+        <module>ssm-03-intergration</module>
     </modules>
 
     <properties>
