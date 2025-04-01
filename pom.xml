@@ -30,6 +30,7 @@
         <module>ssm-57-data-persist</module>
         <module>ssm-03-intergration</module>
         <module>ssm-58-security</module>
+        <module>ssm-04-error-handling</module>
     </modules>
 
     <properties>
