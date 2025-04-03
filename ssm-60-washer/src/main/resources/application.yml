@@ -1,0 +1,3 @@
+spring:
+  application.name: ssm-60-washer
+  shell.interactive.enabled: true
