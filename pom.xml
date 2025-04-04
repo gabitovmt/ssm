@@ -33,6 +33,7 @@
         <module>ssm-04-error-handling</module>
         <module>ssm-59-cd-player</module>
         <module>ssm-60-washer</module>
+        <module>ssm-61-scope</module>
     </modules>
 
     <properties>
